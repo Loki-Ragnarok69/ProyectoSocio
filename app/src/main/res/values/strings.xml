@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Socios</string>
     <string name="titulo_alta">ALTA SOCIOS</string>
+    <string name="splash_description">Hecho por Manuel Losa</string>
 </resources>
