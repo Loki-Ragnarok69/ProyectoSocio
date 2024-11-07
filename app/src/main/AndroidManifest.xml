@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_app"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_app"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProyectoSocio"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".Menu"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AltaSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".AltaDepartamento"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".ConsultarporCodigoSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".ConsultarporNombreSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".BajaSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".ModificacionSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+        <activity
+            android:name=".FormularioModificacionSocio"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio">
+        </activity>
+    </application>
+</manifest>

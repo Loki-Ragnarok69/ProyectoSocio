@@ -1,0 +1,94 @@
+<resources>
+    <!-- Estilo para botón con borde redondeado -->
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">#ffffff</item> <!-- Texto blanco -->
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- Estilo para botón con ripple -->
+    <style name="RippleButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_ripple</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para un botón con sombra -->
+    <style name="ShadowButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_gradient</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para un botón con icono y texto -->
+    <style name="IconTextButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_icon_text</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Estilo para botón transparente con bordes -->
+    <style name="BorderButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:textColor">#FF6200EE</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para EditText con borde redondeado y color personalizado -->
+    <style name="RoundedEditTextStyle">
+        <!-- Margen y Padding -->
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+
+        <!-- Fondo con borde redondeado -->
+        <item name="android:background">@drawable/rounded_edit_text_background</item>
+
+        <!-- Color del texto y tamaño de fuente -->
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">16sp</item>
+
+        <!-- Color del texto de pista y estilo -->
+        <item name="android:textColorHint">#999999</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="FocusEditTextStyle">
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@drawable/edit_text_background_focus</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorHint">#AAAAAA</item>
+    </style>
+
+    <style name="ElevatedEditTextStyle">
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/elevated_edit_text_background</item>
+        <item name="android:elevation">4dp</item> <!-- Elevación para la sombra -->
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHint">#666666</item>
+    </style>
+
+    <!-- Estilo general para el PopupMenu -->
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">#FFFFFF</item> <!-- Fondo del menú -->
+        <item name="android:elevation">8dp</item> <!-- Elevación para sombra -->
+    </style>
+
+    <!-- Estilo para los elementos (items) del PopupMenu -->
+    <style name="CustomPopupMenuItem">
+        <item name="android:textColor">#333333</item> <!-- Color del texto -->
+        <item name="android:textSize">16sp</item> <!-- Tamaño del texto -->
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros estilos globales de la app -->
+        <item name="popupMenuStyle">@style/CustomPopupMenu</item>
+    </style>
+</resources>

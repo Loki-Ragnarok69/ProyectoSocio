@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_alta_socio"
+        android:title="Alta Socio" />
+    <item
+        android:id="@+id/menu_alta_departamento"
+        android:title="Alta Departamento" />
+    <item
+        android:id="@+id/menu_baja_socio"
+        android:title="Baja Socio" />
+    <item
+        android:id="@+id/menu_consultar_codigo"
+        android:title="Consultar por Código" />
+    <item
+        android:id="@+id/menu_consultar_nombre"
+        android:title="Consultar por Nombre" />
+    <item
+        android:id="@+id/menu_modificar_socio"
+        android:title="Modificar Socio" />
+</menu>
