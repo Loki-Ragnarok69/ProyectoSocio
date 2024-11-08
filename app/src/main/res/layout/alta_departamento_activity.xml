@@ -35,21 +35,22 @@
 
     <EditText
         android:id="@+id/nombreDepartamento"
+        style="@style/RoundedEditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="40dp"
         android:hint="Ingrese el nombre"
+        android:inputType="textCapSentences"
+        android:maxLength="20"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        android:maxLength="20"
-        android:inputType="textCapSentences"
-        style="@style/RoundedEditTextStyle"/>
+        app:layout_constraintVertical_bias="0.1" />
 
     <EditText
         android:id="@+id/plantaDepartamento"

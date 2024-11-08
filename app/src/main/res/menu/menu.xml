@@ -18,4 +18,7 @@
     <item
         android:id="@+id/menu_modificar_socio"
         android:title="Modificar Socio" />
+    <item
+        android:id="@+id/menu_detalle_socio"
+        android:title="Detalles Socio" />
 </menu>

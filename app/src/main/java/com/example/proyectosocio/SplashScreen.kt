@@ -35,6 +35,6 @@ class SplashScreen : ComponentActivity() {
             val mainIntent = Intent(this, Menu::class.java)
             startActivity(mainIntent)
             finish()
-        }, 4000)
+        }, 2000)
     }
 }

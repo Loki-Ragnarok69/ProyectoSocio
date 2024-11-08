@@ -101,4 +101,24 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: CursorFacto
             Toast.makeText(context, "Error al cargar socios: ${e.message}", Toast.LENGTH_LONG).show()
         }
     }
+
+    fun obtenerTodosLosSocios(): List<Socio> {
+        val socios = mutableListOf<Socio>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT nombre, apellidos, direccion, telefono, nombre_d FROM socios", null)
+
+        while (cursor.moveToNext()) {
+            val socio = Socio(
+                nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                apellidos = cursor.getString(cursor.getColumnIndexOrThrow("apellidos")),
+                direccion = cursor.getString(cursor.getColumnIndexOrThrow("direccion")),
+                telefono = cursor.getString(cursor.getColumnIndexOrThrow("telefono")),
+                nombre_d = cursor.getString(cursor.getColumnIndexOrThrow("nombre_d"))
+            )
+            socios.add(socio)
+        }
+        cursor.close()
+        db.close()
+        return socios
+    }
 }
