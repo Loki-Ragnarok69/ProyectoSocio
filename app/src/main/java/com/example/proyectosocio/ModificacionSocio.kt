@@ -23,7 +23,6 @@ class ModificacionSocio : ComponentActivity() {
             showPopupMenu(view)
         }
 
-
         val spinnerSocios: Spinner = findViewById(R.id.spinnerSocios)
 
         val admin = AdminSQLiteOpenHelper(this, "administracion.bd", null, 1)
@@ -61,7 +60,9 @@ class ModificacionSocio : ComponentActivity() {
                 R.id.menu_baja_socio -> startActivity(Intent(this, BajaSocio::class.java))
                 R.id.menu_consultar_codigo -> startActivity(Intent(this, ConsultarporCodigoSocio::class.java))
                 R.id.menu_consultar_nombre -> startActivity(Intent(this, ConsultarporNombreSocio::class.java))
+                R.id.menu_consultar_departamento -> startActivity(Intent(this, ConsultaDepartamento::class.java))
                 R.id.menu_modificar_socio -> startActivity(Intent(this, ModificacionSocio::class.java))
+                R.id.menu_detalle_socio -> startActivity(Intent(this, DetalleSocios::class.java))
             }
             true
         }

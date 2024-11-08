@@ -73,41 +73,21 @@ class ConsultaDepartamento : ComponentActivity() {
         val popupMenu = PopupMenu(this, view)
         popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
 
+        // Configura las acciones para cada elemento del menú
         popupMenu.setOnMenuItemClickListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.menu_alta_socio -> startActivity(Intent(this, AltaSocio::class.java))
-                R.id.menu_alta_departamento -> startActivity(
-                    Intent(
-                        this,
-                        AltaDepartamento::class.java
-                    )
-                )
-
+                R.id.menu_alta_departamento -> startActivity(Intent(this, AltaDepartamento::class.java))
                 R.id.menu_baja_socio -> startActivity(Intent(this, BajaSocio::class.java))
-                R.id.menu_consultar_codigo -> startActivity(
-                    Intent(
-                        this,
-                        ConsultarporCodigoSocio::class.java
-                    )
-                )
-
-                R.id.menu_consultar_nombre -> startActivity(
-                    Intent(
-                        this,
-                        ConsultarporNombreSocio::class.java
-                    )
-                )
-
-                R.id.menu_modificar_socio -> startActivity(
-                    Intent(
-                        this,
-                        ModificacionSocio::class.java
-                    )
-                )
+                R.id.menu_consultar_codigo -> startActivity(Intent(this, ConsultarporCodigoSocio::class.java))
+                R.id.menu_consultar_nombre -> startActivity(Intent(this, ConsultarporNombreSocio::class.java))
+                R.id.menu_consultar_departamento -> startActivity(Intent(this, ConsultaDepartamento::class.java))
+                R.id.menu_modificar_socio -> startActivity(Intent(this, ModificacionSocio::class.java))
+                R.id.menu_detalle_socio -> startActivity(Intent(this, DetalleSocios::class.java))
             }
             true
         }
-        popupMenu.show()
+        popupMenu.show() // Muestra el menú
     }
 
     override fun onBackPressed() {
