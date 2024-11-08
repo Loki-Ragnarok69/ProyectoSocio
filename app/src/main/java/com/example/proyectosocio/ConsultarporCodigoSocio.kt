@@ -2,6 +2,7 @@ package com.example.proyectosocio
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
@@ -37,6 +38,7 @@ class ConsultarporCodigoSocio : ComponentActivity() {
         // Establecer el listener del Spinner
         spinnerSocios.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: android.view.View, position: Int, id: Long) {
+                datos.setBackgroundResource(R.drawable.textview_borde_redondeado);
                 // Obtener el socio seleccionado
                 val selectedCodigo = spinnerSocios.selectedItem.toString()
 
@@ -75,6 +77,7 @@ class ConsultarporCodigoSocio : ComponentActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
+
                 datos.visibility = TextView.GONE // Hacer invisible si no hay selección
             }
         }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo cuando el TextView tiene el foco o está seleccionado -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#00FFFFFF" />
+            <corners android:radius="12dp" />
+            <stroke android:color="#695145BD" android:width="3dp" /> <!-- Borde de color cuando está seleccionado -->
+        </shape>
+    </item>
+
+</selector>

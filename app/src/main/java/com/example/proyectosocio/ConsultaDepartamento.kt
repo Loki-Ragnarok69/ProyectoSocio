@@ -2,6 +2,7 @@ package com.example.proyectosocio
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
@@ -21,6 +22,7 @@ class ConsultaDepartamento : ComponentActivity() {
         val menuButton: ImageButton = findViewById(R.id.menuButton)
         val spinnerDepartamentos: Spinner = findViewById(R.id.spinnerDepartamentos)
         val datos: TextView = findViewById(R.id.datos)
+        datos.movementMethod = ScrollingMovementMethod()
 
         val admin = AdminSQLiteOpenHelper(this, "administracion.bd", null, 1)
 
@@ -35,6 +37,7 @@ class ConsultaDepartamento : ComponentActivity() {
                 position: Int,
                 id: Long
             ) {
+
                 val selectedDepartamento = spinnerDepartamentos.selectedItem.toString()
 
                 // Verificar que no sea la opción por defecto
@@ -52,6 +55,7 @@ class ConsultaDepartamento : ComponentActivity() {
                         "Nombre: ${socio.nombre}\nApellidos: ${socio.apellidos}\nDirección: ${socio.direccion}\nTeléfono: ${socio.telefono}\n" +
                                 "Departamento: ${socio.nombre_d}"
                     }
+                    datos.setBackgroundResource(R.drawable.textview_borde_redondeado)
                     datos.visibility = TextView.VISIBLE
                 } else {
                     datos.text = "No hay socios en este departamento"

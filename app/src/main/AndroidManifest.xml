@@ -11,14 +11,16 @@
         android:roundIcon="@drawable/logo_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoSocio"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        tools:ignore="DiscouragedApi">
 
         <!-- Actividad principal para iniciar la aplicación -->
         <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,56 +32,68 @@
             android:name=".Menu"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AltaSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AltaDepartamento"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ConsultarporCodigoSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ConsultarporNombreSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".BajaSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ModificacionSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".FormularioModificacionSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DetalleSocios"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".InformacionSocios"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ConsultaDepartamento"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio" />
+            android:theme="@style/Theme.ProyectoSocio"
+            android:screenOrientation="portrait"
+            />
     </application>
 </manifest>

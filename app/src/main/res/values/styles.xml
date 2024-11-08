@@ -91,4 +91,13 @@
         <!-- Otros estilos globales de la app -->
         <item name="popupMenuStyle">@style/CustomPopupMenu</item>
     </style>
+
+    <style name="DataTextViewStyle">
+        <item name="android:textColor">@color/black</item> <!-- Color del texto -->
+        <item name="android:textSize">16sp</item> <!-- Tamaño de la fuente -->
+        <item name="android:padding">12dp</item> <!-- Espaciado interno -->
+        <item name="android:lineSpacingExtra">4dp</item> <!-- Espaciado entre líneas -->
+        <item name="android:gravity">center_vertical|start</item> <!-- Alineación -->
+    </style>
+
 </resources>
