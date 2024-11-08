@@ -13,6 +13,7 @@
         android:theme="@style/Theme.ProyectoSocio"
         tools:targetApi="31">
 
+        <!-- Actividad principal para iniciar la aplicación -->
         <activity
             android:name=".SplashScreen"
             android:exported="true"
@@ -20,69 +21,65 @@
             android:theme="@style/Theme.ProyectoSocio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Lista de actividades con sus configuraciones -->
         <activity
             android:name=".Menu"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".AltaSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".AltaDepartamento"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".ConsultarporCodigoSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".ConsultarporNombreSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".BajaSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".ModificacionSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".FormularioModificacionSocio"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".DetalleSocios"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
         <activity
             android:name=".InformacionSocios"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProyectoSocio">
-        </activity>
+            android:theme="@style/Theme.ProyectoSocio" />
+        <activity
+            android:name=".ConsultaDepartamento"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ProyectoSocio" />
     </application>
 </manifest>

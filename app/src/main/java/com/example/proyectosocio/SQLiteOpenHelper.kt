@@ -121,4 +121,50 @@ class AdminSQLiteOpenHelper(context: Context, name: String, factory: CursorFacto
         db.close()
         return socios
     }
+
+
+    // Obtener socios de un departamento específico
+    fun getSociosPorDepartamento(departamento: String): List<Socio> {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT nombre, apellidos, direccion, telefono, nombre_d FROM socios WHERE nombre_d = ?",
+            arrayOf(departamento)
+        )
+
+        val sociosList = ArrayList<Socio>()
+        while (cursor.moveToNext()) {
+            val socio = Socio(
+                nombre = cursor.getString(0),
+                apellidos = cursor.getString(1),
+                direccion = cursor.getString(2),
+                telefono = cursor.getString(3),
+                nombre_d = cursor.getString(4)
+            )
+            sociosList.add(socio)
+        }
+
+        cursor.close()
+        db.close()
+        return sociosList
+    }
+
+    fun loadDetalleDepartamentosToSpinner(context: Context, spinner: Spinner) {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT DISTINCT nombre_d FROM socios", null)
+
+        val departamentosList = ArrayList<String>()
+        departamentosList.add("Seleccione un departamento") // Opción por defecto
+
+        while (cursor.moveToNext()) {
+            val departamento = cursor.getString(0)
+            departamentosList.add(departamento)
+        }
+
+        cursor.close()
+        db.close()
+
+        val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, departamentosList)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+    }
 }

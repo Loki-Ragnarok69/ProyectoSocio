@@ -16,6 +16,9 @@
         android:id="@+id/menu_consultar_nombre"
         android:title="Consultar por Nombre" />
     <item
+        android:id="@+id/menu_consultar_departamento"
+        android:title="Consultar Departamento" />
+    <item
         android:id="@+id/menu_modificar_socio"
         android:title="Modificar Socio" />
     <item
