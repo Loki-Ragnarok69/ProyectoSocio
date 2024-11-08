@@ -2,14 +2,20 @@ package com.example.proyectosocio
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.GestureDetector
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GestureDetectorCompat
 
 class InformacionSocios : ComponentActivity() {
+
+    private lateinit var gestureDetector: GestureDetectorCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +27,9 @@ class InformacionSocios : ComponentActivity() {
         menuButton.setOnClickListener { view ->
             showPopupMenu(view)
         }
+
+        // Detecta el gesto de deslizamiento
+        gestureDetector = GestureDetectorCompat(this, GestureListener())
 
         val socio = intent.getSerializableExtra("socio") as? Socio
 
@@ -58,5 +67,34 @@ class InformacionSocios : ComponentActivity() {
             true
         }
         popupMenu.show() // Muestra el menú
+    }
+
+    // Sobrescribimos el método onTouchEvent para detectar el gesto de deslizamiento
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event)
+    }
+
+    // Clase interna para manejar el gesto de deslizamiento a la derecha
+    inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
+
+        private val SWIPE_THRESHOLD = 100
+        private val SWIPE_VELOCITY_THRESHOLD = 100
+
+        override fun onFling(
+            e1: MotionEvent?,
+            e2: MotionEvent,
+            velocityX: Float,
+            velocityY: Float
+        ): Boolean {
+            val diffX = e2.x - (e1?.x ?: 0f)
+
+            // Detectar solo el deslizamiento a la derecha
+            return if (diffX > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                finish()
+                true
+            } else {
+                false
+            }
+        }
     }
 }
