@@ -36,16 +36,16 @@ class AltaSocio: ComponentActivity() {
         val admin = AdminSQLiteOpenHelper(this, "administracion.bd", null, 1)
         admin.loadDepartamentosToSpinner(this, spinnerDepartamentos)
 
-        guardarSocios.setOnClickListener{
+        guardarSocios.setOnClickListener {
             try {
                 val bd = admin.writableDatabase
                 val registro = ContentValues()
 
                 // Obtener los valores de los campos
-                val nombre = nombreSocio.text.toString()
-                val apellidos = apellidosSocio.text.toString()
-                val direccion = direccionSocio.text.toString()
-                val telefono = telefonoSocio.text.toString()
+                val nombre = nombreSocio.text.toString().trim()
+                val apellidos = apellidosSocio.text.toString().trim()
+                val direccion = direccionSocio.text.toString().trim()
+                val telefono = telefonoSocio.text.toString().trim()
                 val departamentoSeleccionado = spinnerDepartamentos.selectedItem.toString()
 
                 // Validar campos de manera individual
@@ -65,34 +65,50 @@ class AltaSocio: ComponentActivity() {
                     Toast.makeText(this, "El teléfono no puede estar vacío", Toast.LENGTH_LONG).show()
                     return@setOnClickListener // Detener el guardado si hay error
                 }
+
                 // Verificar que se haya seleccionado un departamento válido
                 if (departamentoSeleccionado == "Seleccione un departamento") {
                     Toast.makeText(this, "Por favor seleccione un departamento válido", Toast.LENGTH_LONG).show()
                     return@setOnClickListener // Salir del método y no continuar con el guardado
                 }
 
-                // Rellenar los valores del registro
-                registro.put("nombre", nombre)
-                registro.put("apellidos", apellidos)
-                registro.put("direccion", direccion)
-                registro.put("telefono", telefono)
-                registro.put("nombre_d", departamentoSeleccionado)
+                // Verificar si ya existe un socio con el mismo nombre y apellidos
+                val query = """
+                    SELECT rowid FROM socios 
+                    WHERE nombre = ? AND apellidos = ?
+                """
+                val cursor = bd.rawQuery(query, arrayOf(nombre, apellidos))
 
-                bd.insert("socios", null, registro)
-                bd.close()
+                if (cursor.moveToFirst()) {
+                    // Si el cursor tiene resultados, significa que ya existe un socio con ese nombre y apellidos
+                    Toast.makeText(this, "Ya existe un socio con ese nombre y apellidos", Toast.LENGTH_LONG).show()
+                } else {
+                    // Si no existe, proceder a insertar el nuevo socio
+                    registro.put("nombre", nombre)
+                    registro.put("apellidos", apellidos)
+                    registro.put("direccion", direccion)
+                    registro.put("telefono", telefono)
+                    registro.put("nombre_d", departamentoSeleccionado)
 
-                nombreSocio.setText("")
-                apellidosSocio.setText("")
-                direccionSocio.setText("")
-                telefonoSocio.setText("")
-                spinnerDepartamentos.setSelection(0)
+                    // Insertar el socio en la base de datos
+                    bd.insert("socios", null, registro)
+                    Toast.makeText(this, "Socio guardado", Toast.LENGTH_LONG).show()
 
-                Toast.makeText(this, "Socio guardado", Toast.LENGTH_LONG).show()
-            }catch (e: Exception){
+                    // Limpiar los campos después de guardar
+                    nombreSocio.setText("")
+                    apellidosSocio.setText("")
+                    direccionSocio.setText("")
+                    telefonoSocio.setText("")
+                    spinnerDepartamentos.setSelection(0)
+                }
+
+                cursor.close() // Cerrar el cursor
+                bd.close() // Cerrar la base de datos
+
+            } catch (e: Exception) {
                 Toast.makeText(this, "Error al guardar el socio: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 
     private fun showPopupMenu(view: View) {
