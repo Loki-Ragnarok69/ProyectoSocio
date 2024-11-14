@@ -16,6 +16,32 @@
         android:layout_margin="16dp"
         android:background="?android:attr/selectableItemBackground" />
 
+    <ImageView
+        android:id="@+id/cabeceraShadow"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logo_cabecera"
+        android:tint="#55000000"
+        android:scaleType="centerInside"
+        android:translationX="1dp"
+        android:translationY="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/cabecera"
+        app:layout_constraintEnd_toEndOf="@id/cabecera"
+        app:layout_constraintStart_toStartOf="@id/cabecera"
+        app:layout_constraintTop_toTopOf="@id/cabecera" />
+
+    <ImageView
+        android:id="@+id/cabecera"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/logo_cabecera"
+        app:layout_constraintBottom_toBottomOf="@id/menuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menuButton"
+        />
+
     <ListView
         android:id="@+id/listViewSocios"
         android:layout_width="match_parent"
